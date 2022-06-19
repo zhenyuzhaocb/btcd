@@ -66,7 +66,7 @@ goimports:
 build:
 	@$(call print, "Building all binaries")
 	$(GOBUILD) $(PKG)
-	$(GOBUILD) $(PKG)/cmd/btcctl
+	$(GOBUILD) $(PKG)/cmd/ltcctl
 	$(GOBUILD) $(PKG)/cmd/gencerts
 	$(GOBUILD) $(PKG)/cmd/findcheckpoint
 	$(GOBUILD) $(PKG)/cmd/addblock

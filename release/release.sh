@@ -22,7 +22,7 @@ fi
 go mod vendor
 tar -cvzf vendor.tar.gz vendor
 
-PACKAGE=btcd
+PACKAGE=ltcd
 MAINDIR=$PACKAGE-$TAG
 mkdir -p $MAINDIR
 

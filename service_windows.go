@@ -22,7 +22,7 @@ const (
 	// svcDisplayName is the service name that will be shown in the windows
 	// services list.  Not the svcName is the "real" name which is used
 	// to control the service.  This is only for display purposes.
-	svcDisplayName = "Btcd Service"
+	svcDisplayName = "Ltcd Service"
 
 	// svcDesc is the description of the service.
 	svcDesc = "Downloads and stays synchronized with the bitcoin block " +
@@ -276,7 +276,7 @@ func performServiceCommand(command string) error {
 // running as a service) or launch in normal interactive mode.
 func serviceMain() (bool, error) {
 	// Don't run as a service if the user explicitly requested it. This is
-	// needed to run btcd on Windows in CI environments like Travis.
+	// needed to run ltcd on Windows in CI environments like Travis.
 	// We can't use the config struct to access the value because that's not
 	// parsed yet. But we add the flag to the struct anyway so the parser
 	// won't complain about it later.

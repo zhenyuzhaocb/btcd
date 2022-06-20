@@ -93,7 +93,7 @@ for i in $SYS; do
 
     echo "Building:" $OS $ARCH $ARM
     env CGO_ENABLED=0 GOOS=$OS GOARCH=$ARCH GOARM=$ARM go build -v -trimpath -ldflags="-s -w -buildid=" github.com/ltcsuite/ltcd
-    env CGO_ENABLED=0 GOOS=$OS GOARCH=$ARCH GOARM=$ARM go build -v -trimpath -ldflags="-s -w -buildid=" github.com/ltcsuite/ltcd/cmd/btcctl
+    env CGO_ENABLED=0 GOOS=$OS GOARCH=$ARCH GOARM=$ARM go build -v -trimpath -ldflags="-s -w -buildid=" github.com/ltcsuite/ltcd/cmd/ltcctl
     cd ..
 
     if [[ $OS = "windows" ]]; then

@@ -73,7 +73,7 @@ SYS=${BTCDBUILDSYS:-"
 # Use the first element of $GOPATH in the case where GOPATH is a list
 # (something that is totally allowed).
 PKG="github.com/ltcsuite/ltcd"
-COMMIT=$(git describe --abbrev=40 --dirty)
+COMMIT=$(git describe --abbrev=40 --dirty --tags)
 
 for i in $SYS; do
     OS=$(echo $i | cut -f1 -d-)

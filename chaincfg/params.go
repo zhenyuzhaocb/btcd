@@ -274,7 +274,6 @@ var MainNetParams = Params{
 		{"dnsseed.thrasher.io", true},
 		{"dnsseed.litecointools.com", false},
 		{"dnsseed.litecoinpool.org", false},
-		{"dnsseed.koin-project.com", false},
 	},
 
 	// Chain parameters
@@ -312,6 +311,7 @@ var MainNetParams = Params{
 		{456000, newHashFromStr("bf34f71cc6366cd487930d06be22f897e34ca6a40501ac7d401be32456372004")},
 		{638902, newHashFromStr("15238656e8ec63d28de29a8c75fcf3a5819afc953dcd9cc45cecc53baec74f38")},
 		{721000, newHashFromStr("198a7b4de1df9478e2463bd99d75b714eab235a2e63e741641dc8a759a9840e5")},
+		{2283345, newHashFromStr("e83b10e203c5389af6084d0156995e9081f9f560e5b67dee3c71b0c9a5a21095")},
 	},
 
 	// Consensus rule change deployments.
@@ -519,6 +519,7 @@ var TestNet4Params = Params{
 		{69296, newHashFromStr("66c2f58da3cfd282093b55eb09c1f5287d7a18801a8ff441830e67e8771010df")},
 		{99949, newHashFromStr("8dd471cb5aecf5ead91e7e4b1e932c79a0763060f8d93671b6801d115bfc6cde")},
 		{159256, newHashFromStr("ab5b0b9968842f5414804591119d6db829af606864b1959a25d6f5c114afb2b7")},
+		{2394367, newHashFromStr("bc5829f4973d0797755efee11313687b3c63ee2f70b60b62eebcd10283534327")},
 	},
 
 	// Consensus rule change deployments.

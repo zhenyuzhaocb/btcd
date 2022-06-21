@@ -47,6 +47,8 @@ const (
 	// purposes.  It is also used to help determine if a transaction is
 	// considered dust and as a base for calculating minimum required fees
 	// for larger transactions.  This value is in Satoshi/1000 bytes.
+	// Litecoin v0.21: currently same as Bitcoin
+	//https://github.com/litecoin-project/litecoin/blob/master/src/validation.h#L56
 	DefaultMinRelayTxFee = ltcutil.Amount(1000)
 
 	// maxStandardMultiSigKeys is the maximum number of public keys allowed
@@ -173,8 +175,10 @@ func checkPkScriptStandard(pkScript []byte, scriptClass txscript.ScriptClass) er
 }
 
 // GetDustThreshold calculates the dust limit for a *wire.TxOut by taking the
-// size of a typical spending transaction and multiplying it by 3 to account
-// for the minimum dust relay fee of 3000sat/kvb.
+// size of a typical spending transaction and multiplying it by 30 to account
+// for the minimum dust relay fee of 30000 sat/kvb.
+// Litecoin v0.21: x10 Bitcoin as Litecoin mindust is 5460 sats
+// https://github.com/litecoin-project/litecoin/blob/master/src/policy/policy.h#L52
 func GetDustThreshold(txOut *wire.TxOut) int64 {
 	// The total serialized size consists of the output and the associated
 	// input script to redeem it.  Since there is no input script
@@ -246,7 +250,7 @@ func GetDustThreshold(txOut *wire.TxOut) int64 {
 		totalSize += 107
 	}
 
-	return 3 * int64(totalSize)
+	return 3 * int64(totalSize) * 10
 }
 
 // IsDust returns whether or not the passed transaction output amount is
